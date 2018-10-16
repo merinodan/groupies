@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Parameters:
+
+Resources:
+
+  pullEntryListFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: pullEntryList.handler
+      Runtime: python2.7
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /ratings
+            Method: get
+
+  
+
+Outputs:

@@ -1,4 +1,5 @@
 import boto3
+import botocore
 import spotipy
 
 def pullSong(query):

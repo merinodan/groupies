@@ -1,4 +1,5 @@
 import boto3
+import botocore
 
 def createGroupie(query):
     # create a groupie
