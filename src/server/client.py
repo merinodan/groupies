@@ -1,5 +1,7 @@
 import boto3
 import botocore
+import wiki as wiki
+import spotify as spotify
 
 def createGroupie(query):
     # create a groupie
@@ -10,6 +12,8 @@ def createGroupie(query):
     # 5. add songs to playlist
     # 6. song scramble
     # 7. return and display playlist
+
+    links = wiki.getLinks(query)
 
     groupie = query
 

@@ -1,16 +1,32 @@
 import boto3
 import botocore
 import spotipy
+import os
+import spotipy.util as util
+import json
 
-def pullSong(query):
-    # return a song id, see if a related query is on spotify
+scope = 'user-read-private user-read-playback-state user-modify-playback-state user-read-currently-playing'
+username = '1225094990'
+token = util.prompt_for_user_token(username, scope)
+sp = spotipy.Spotify(auth=token)
 
-    # if it is, return the song id
-    if query() != query:
-        return None
-    # if not, return null
-    else:
-        return None
+def pullSongs(links):
+    # see if a related query is on spotify, if so, return a song id
+    songlist = []
+    urilist = []
+
+    for link in links:  # for every song, search for it and keep track of its name and UID
+        data = sp.search(q=link, limit=1, type='track')
+
+        try:
+            songlist.append(data["tracks"]["items"][0]["name"])
+            urilist.append(data["tracks"]["items"][0]["uri"])
+        except:
+            songlist.append("No song found for " + link)
+
+    # print(urilist)
+
+    return songlist
 
 def createPlaylist(playlist_name):
     # create a new playlist
