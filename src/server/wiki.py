@@ -10,8 +10,8 @@ def pullEntryList(entry):
         
     return list
 
-def getLinks(query):
-    # returns a list of links from the summary
+def getTitles(query):
+    # returns a list of titles
 
     list = wikipedia.page(query).links
 
