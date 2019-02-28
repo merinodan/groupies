@@ -17,6 +17,8 @@ class Song(object): # define Song object
         self.song_id = ""
 
 def songify(titles, playlist):   # 'songify' all the titles and add them to the playlist
+    limit = 10
+    i = 0
     for title in titles:
         NewSong = pullSong(title)
 
@@ -24,6 +26,10 @@ def songify(titles, playlist):   # 'songify' all the titles and add them to the 
             song_id = NewSong[1]
             sp.user_playlist_add_tracks(username, playlist, [song_id]) # add the song to the playlist
             print('added ' + NewSong[0] + ' to playlist ' + playlist)
+            i += 1
+
+        if i >= limit:  # stop at the limit, so you don't add songs ad infinitum
+            break
 
 def pullSong(title):
     # see if a related query is on spotify, if so, return a song id
