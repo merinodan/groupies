@@ -5,7 +5,7 @@ import client as runner
 # links = fl.getLinks("Roblox") # get links
 # fl2.pullSongs(links)
 
-print(runner.createGroupie("Kal Ho Naa Ho"))
+print((runner.createGroupie("Google")))
 
 # fl1.getTitles("Matrix")
 
