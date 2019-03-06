@@ -1,5 +1,3 @@
-import boto3
-import botocore
 import spotipy
 import os
 import spotipy.util as util

@@ -1,7 +1,4 @@
-import boto3
-import botocore
 import wikipedia
-from gensim import corpora
 
 def pullEntryList(entry):
     # when typing a term, generate a list of possible queries

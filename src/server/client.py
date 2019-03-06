@@ -1,5 +1,3 @@
-import boto3
-import botocore
 import wiki as w
 import spotify as sp
 
